@@ -1,0 +1,198 @@
+.sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--bg-glass);
+  border-right: 1px solid var(--border);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ── Logo ──────────────────────────────────────────────────── */
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 14px 13px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-logo-icon {
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(79,139,255,0.5));
+}
+
+.sidebar-logo-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.sidebar-logo-sub {
+  font-size: 9px;
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+
+/* ── Repo indicator ──────────────────────────────────────────── */
+
+.sidebar-repo-indicator {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  background: rgba(79,139,255,0.06);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 11px;
+  color: var(--text-secondary);
+  overflow: hidden;
+}
+
+.sidebar-repo-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  box-shadow: 0 0 6px var(--green);
+}
+
+/* ── Nav links ───────────────────────────────────────────────── */
+
+.sidebar-nav {
+  flex: 1;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow-y: auto;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 9px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  font-weight: 450;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+}
+
+.sidebar-link:hover {
+  background: var(--bg-glass-light);
+  color: var(--text-primary);
+}
+
+.sidebar-link--active {
+  background: var(--accent-dim);
+  color: var(--accent-2);
+}
+
+.sidebar-link--active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  border-radius: 0 2px 2px 0;
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.sidebar-link--active:hover {
+  background: var(--accent-dim);
+}
+
+.sidebar-link-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  color: inherit;
+}
+
+.sidebar-link:hover .sidebar-link-icon {
+  opacity: 0.95;
+}
+
+.sidebar-link--active .sidebar-link-icon {
+  opacity: 1;
+  color: var(--accent-2);
+}
+
+.sidebar-link-label {
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sidebar-link-sm {
+  padding: 6px 9px;
+  font-size: 12px;
+}
+
+/* ── Bottom section ──────────────────────────────────────────── */
+
+.sidebar-bottom {
+  padding: 10px 8px 14px;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar-status-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 10px;
+}
+
+.sidebar-status-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.02em;
+}
+
+/* ── Status dots ─────────────────────────────────────────────── */
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-dot--ok  {
+  background: var(--green);
+  box-shadow: 0 0 5px var(--green);
+}
+.status-dot--err {
+  background: var(--red);
+  box-shadow: 0 0 5px var(--red);
+}
+.status-dot--ai  {
+  background: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}

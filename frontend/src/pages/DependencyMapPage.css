@@ -1,0 +1,304 @@
+.depmap-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+.depmap-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-surface);
+  flex-wrap: wrap;
+}
+
+.depmap-toolbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.depmap-filters {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.depmap-filters .input {
+  padding: 5px 8px;
+  font-size: 12px;
+  height: 30px;
+}
+
+.depmap-domino-btn {
+  margin-left: auto;
+  background: linear-gradient(135deg, #4f81ff, #9b6dff);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.depmap-domino-btn:hover {
+  background: linear-gradient(135deg, #6694ff, #ab85ff);
+}
+
+.depmap-body {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.depmap-canvas {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─── ReactFlow overrides ─────────────────────────────────────────────────── */
+
+.react-flow__renderer { background: var(--bg-base); }
+.react-flow__background { background: var(--bg-base); }
+.react-flow__controls {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.react-flow__controls-button {
+  background: var(--bg-surface);
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  fill: var(--text-secondary);
+  width: 28px;
+  height: 28px;
+}
+.react-flow__controls-button:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+.react-flow__attribution { display: none; }
+
+/* ─── Node search ─────────────────────────────────────────────────────────── */
+
+.depmap-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.depmap-search-input {
+  width: 180px;
+  padding-right: 28px;
+  font-size: 12px;
+  height: 30px;
+}
+
+.depmap-search-clear {
+  position: absolute;
+  right: 6px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0;
+  line-height: 1;
+}
+
+.depmap-search-clear:hover { color: var(--text-primary); }
+
+.depmap-search-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 280px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.depmap-search-option {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  text-align: left;
+  padding: 7px 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.depmap-search-option:last-child { border-bottom: none; }
+.depmap-search-option:hover { background: var(--bg-overlay); }
+
+.depmap-search-option-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.depmap-search-option-path {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ─── Custom nodes ────────────────────────────────────────────────────────── */
+
+.domino-node {
+  background: var(--bg-elevated);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 160px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  user-select: none;
+}
+
+.domino-node--selected {
+  border-width: 2px;
+}
+
+.domino-node--highlighted {
+  border-width: 2px;
+  animation: node-highlight-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes node-highlight-pulse {
+  0%, 100% { box-shadow: 0 0 10px 2px rgba(6,182,212,0.3); }
+  50%       { box-shadow: 0 0 18px 5px rgba(6,182,212,0.55); }
+}
+
+.domino-node-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.domino-node-lang {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.domino-node-name {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.domino-node-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.domino-node-type {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.domino-node-score {
+  font-size: 10px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+/* ─── Domino phase overlay ────────────────────────────────────────────────── */
+
+.domino-phase-indicator {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  animation: domino-cascade 300ms ease;
+}
+
+.domino-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 20px;
+  background: rgba(13,15,18,0.9);
+  border: 1px solid;
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(6px);
+}
+
+.domino-phase-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.domino-phase-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+/* ─── Legend ─────────────────────────────────────────────────────────────── */
+
+.depmap-legend {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(19,22,27,0.92);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  z-index: 30;
+  backdrop-filter: blur(6px);
+  min-width: 110px;
+}
+
+.legend-title {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 3px;
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}

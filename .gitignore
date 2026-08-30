@@ -1,0 +1,37 @@
+# Frontend dependencies
+frontend/node_modules/
+
+# Frontend build
+frontend/build/
+frontend/dist/
+frontend/.vite/
+
+# Python virtual environment
+backend/.venv/
+backend/venv/
+backend/env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Testing
+.pytest_cache/
+.coverage
+coverage/
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# Uploaded repositories / generated files
+backend/uploads/

@@ -1,0 +1,334 @@
+.impact-panel {
+  width: var(--panel-width);
+  min-width: var(--panel-width);
+  background: var(--bg-surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.impact-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-panel-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.impact-panel-file {
+  font-size: 12px;
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+.impact-score-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.impact-score-value {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.impact-score-max {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.impact-insufficient {
+  padding: 14px 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+  font-style: italic;
+}
+
+.impact-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.impact-stat-cell {
+  padding: 10px 8px;
+  text-align: center;
+  border-right: 1px solid var(--border-subtle);
+}
+.impact-stat-cell:last-child { border-right: none; }
+
+.impact-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.impact-stat-label {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.impact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.impact-actions .btn {
+  flex: 1;
+  min-width: 0;
+  justify-content: center;
+  font-size: 11px;
+  padding: 5px 8px;
+}
+
+.impact-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border);
+}
+
+.impact-tab {
+  flex: 1;
+  padding: 8px 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: var(--font-ui);
+  transition: var(--transition);
+  text-align: center;
+}
+
+.impact-tab:hover { color: var(--text-secondary); }
+
+.impact-tab--active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.impact-tab-content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.impact-tab-body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 12px;
+}
+
+.impact-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.impact-why {
+  background: var(--bg-elevated);
+}
+
+.risk-factor-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.risk-factor-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--risk-high);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.impact-gap-warning {
+  padding: 8px 12px;
+  background: var(--yellow-dim);
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: var(--yellow);
+}
+
+.affected-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.affected-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  color: var(--text-secondary);
+}
+
+.test-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 3px 0;
+}
+
+.test-item--exists { color: var(--green); }
+
+.bullet-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 2px 0;
+}
+
+.ai-fallback-notice {
+  padding: 6px 10px;
+  background: var(--yellow-dim);
+  border-radius: var(--radius);
+  font-size: 11px;
+  color: var(--yellow);
+}
+
+.ai-active-notice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.test-plan-notice {
+  padding: 6px 0;
+}
+
+.sim-consequence {
+  background: var(--bg-elevated);
+}
+
+.report-preview {
+  background: var(--bg-base);
+  overflow: hidden;
+}
+
+.report-text {
+  white-space: pre-wrap;
+  color: var(--text-code);
+  font-size: 10px;
+  line-height: 1.6;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+/* ─── Evidence classification ────────────────────────────────────────────── */
+
+.evidence-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.evidence-group:last-child { border-bottom: none; }
+
+.evidence-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  width: fit-content;
+}
+
+.evidence-label--detected {
+  background: var(--green-dim);
+  color: var(--green);
+}
+
+.evidence-label--inferred {
+  background: var(--accent-dim);
+  color: var(--accent);
+}
+
+.evidence-label--possible {
+  background: var(--yellow-dim);
+  color: var(--yellow);
+}
+
+.evidence-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+
+.evidence-item {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  color: var(--text-secondary);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ─── Uncertainties ──────────────────────────────────────────────────────── */
+
+.uncertainties-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.uncertainty-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 4px 8px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  border-left: 2px solid var(--text-muted);
+}
+
+.uncertainty-icon {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 1px;
+  width: 12px;
+  text-align: center;
+}

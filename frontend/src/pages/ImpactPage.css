@@ -1,0 +1,84 @@
+.impact-page {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+.impact-selector {
+  width: 280px;
+  min-width: 280px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.impact-selector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 12px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.impact-comp-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 4px 8px;
+}
+
+.impact-comp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-ui);
+  transition: var(--transition);
+  margin-bottom: 2px;
+}
+
+.impact-comp-item:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border);
+}
+
+.impact-comp-item--active {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.impact-comp-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.impact-comp-path {
+  font-size: 10px;
+  max-width: 220px;
+}
+
+.impact-comp-meta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+}
+
+.impact-main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.impact-main .impact-panel {
+  width: 100%;
+  border-left: none;
+}

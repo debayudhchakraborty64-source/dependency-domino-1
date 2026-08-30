@@ -1,0 +1,116 @@
+.test-page {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+  overflow: hidden;
+}
+
+.test-sidebar {
+  width: 280px;
+  min-width: 280px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.test-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 12px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.test-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 6px 8px;
+}
+
+.test-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: var(--radius);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: left;
+  font-family: var(--font-ui);
+  transition: var(--transition);
+  margin-bottom: 2px;
+  color: var(--text-primary);
+}
+
+.test-list-item:hover { background: var(--bg-elevated); }
+.test-list-item--active { background: var(--green-dim); border-color: rgba(63,185,80,0.3); }
+
+.test-gap-section {
+  padding: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.test-gap-count {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.test-gap-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.test-gap-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 0;
+  overflow: hidden;
+}
+
+.test-main {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.test-detail {
+  flex: 1;
+}
+
+.test-detail-header {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.test-plan-disclaimer {
+  padding: 10px 14px;
+  background: var(--yellow-dim);
+  border-radius: var(--radius);
+  font-size: 12px;
+  color: var(--yellow);
+  margin-bottom: 16px;
+}
+
+.test-section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.test-item-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 3px 0;
+}
